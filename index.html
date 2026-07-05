@@ -1,126 +1,39 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+let selectedCharacter = "";
 
-body{
-    overflow:hidden;
-    background:#111;
-}
+const boy = document.getElementById("boy");
+const girl = document.getElementById("girl");
+const startBtn = document.getElementById("startBtn");
+const playerName = document.getElementById("playerName");
 
-#welcome{
-    width:100%;
-    height:100vh;
-    background:url("images/museum.jpg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
+boy.addEventListener("click", () => {
+    selectedCharacter = "boy";
+    boy.classList.add("selected");
+    girl.classList.remove("selected");
+});
 
-.overlay{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
-}
+girl.addEventListener("click", () => {
+    selectedCharacter = "girl";
+    girl.classList.add("selected");
+    boy.classList.remove("selected");
+});
 
-.card{
-    position:relative;
-    z-index:10;
-    width:430px;
-    padding:40px;
-    border-radius:25px;
+startBtn.addEventListener("click", () => {
 
-    background:rgba(255,255,255,.12);
+    const name = playerName.value.trim();
 
-    backdrop-filter:blur(12px);
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
 
-    text-align:center;
+    if (selectedCharacter === "") {
+        alert("Please choose your character.");
+        return;
+    }
 
-    border:1px solid rgba(255,255,255,.2);
+    localStorage.setItem("playerName", name);
+    localStorage.setItem("character", selectedCharacter);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.5);
-}
+    window.location.href = "story.html";
 
-.logo{
-    width:90px;
-    margin-bottom:20px;
-}
-
-h1{
-    color:#D4AF37;
-    font-family:'Cinzel',serif;
-    font-size:42px;
-    margin-bottom:10px;
-}
-
-p{
-    color:white;
-    margin-bottom:25px;
-    line-height:28px;
-}
-
-input{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    font-size:17px;
-    margin-bottom:30px;
-}
-
-h2{
-    color:white;
-    margin-bottom:20px;
-}
-
-.characters{
-    display:flex;
-    justify-content:space-around;
-    margin-bottom:30px;
-}
-
-.character{
-    width:130px;
-    cursor:pointer;
-    border-radius:20px;
-    transition:.4s;
-}
-
-.character:hover{
-    transform:scale(1.08);
-}
-
-.selected{
-    border:5px solid gold;
-}
-
-button{
-    width:100%;
-    padding:18px;
-    border:none;
-    border-radius:12px;
-
-    background:#C9A227;
-
-    color:white;
-
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.4s;
-}
-
-button:hover{
-
-    background:#B38E1F;
-
-    transform:scale(1.03);
-
-}
+});
