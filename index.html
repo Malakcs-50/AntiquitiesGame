@@ -1,67 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    <title>Echoes of Time</title>
+body{
+    overflow:hidden;
+    background:#111;
+}
 
-    <link rel="stylesheet" href="style.css">
+#welcome{
+    width:100%;
+    height:100vh;
+    background:url("images/museum.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+}
 
-<body>
+.card{
+    position:relative;
+    z-index:10;
+    width:430px;
+    padding:40px;
+    border-radius:25px;
 
-<section id="welcome">
+    background:rgba(255,255,255,.12);
 
-    <div class="overlay"></div>
+    backdrop-filter:blur(12px);
 
-    <div class="card">
+    text-align:center;
 
-        <img src="images/logo.gif" class="logo">
+    border:1px solid rgba(255,255,255,.2);
 
-        <h1>Echoes of Time</h1>
+    box-shadow:0 15px 40px rgba(0,0,0,.5);
+}
 
-        <p>
-            Welcome to the Antiquities Museum.
-            <br>
-            Your mission is to restore history.
-        </p>
+.logo{
+    width:90px;
+    margin-bottom:20px;
+}
 
-        <input
-            type="text"
-            id="playerName"
-            placeholder="Enter Your Name"
-        >
+h1{
+    color:#D4AF37;
+    font-family:'Cinzel',serif;
+    font-size:42px;
+    margin-bottom:10px;
+}
 
-        <h2>Choose Character</h2>
+p{
+    color:white;
+    margin-bottom:25px;
+    line-height:28px;
+}
 
-        <div class="characters">
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    font-size:17px;
+    margin-bottom:30px;
+}
 
-            <img
-                src="images/boy.jpeg"
-                id="boy"
-                class="character"
-            >
+h2{
+    color:white;
+    margin-bottom:20px;
+}
 
-            <img
-                src="images/girl.png"
-                id="girl"
-                class="character"
-            >
+.characters{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:30px;
+}
 
-        </div>
+.character{
+    width:130px;
+    cursor:pointer;
+    border-radius:20px;
+    transition:.4s;
+}
 
-        <button id="startBtn">
-            START ADVENTURE
-        </button>
+.character:hover{
+    transform:scale(1.08);
+}
 
-    </div>
+.selected{
+    border:5px solid gold;
+}
 
-</section>
+button{
+    width:100%;
+    padding:18px;
+    border:none;
+    border-radius:12px;
 
-<script src="script.js"></script>
+    background:#C9A227;
 
-</body>
-</html>
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+button:hover{
+
+    background:#B38E1F;
+
+    transform:scale(1.03);
+
+}
