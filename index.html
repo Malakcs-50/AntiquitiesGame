@@ -1,122 +1,191 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+const questions = [
+
+{
+image:"images/artifact1.jpg",
+
+story:
+"The Rosetta Stone helped historians understand Ancient Egyptian hieroglyphics.",
+
+question:
+"Why is the Rosetta Stone important?",
+
+answers:[
+"It helped read hieroglyphics",
+"It built pyramids",
+"It was a crown",
+"It was a temple"
+],
+
+correct:0
+},
+
+{
+image:"images/artifact2.jpg",
+
+story:
+"This artifact belonged to Tutankhamun, one of the most famous Pharaohs.",
+
+question:
+"Who owned this artifact?",
+
+answers:[
+"Khufu",
+"Ramses",
+"Tutankhamun",
+"Cleopatra"
+],
+
+correct:2
+},
+
+{
+image:"images/artifact3.jpg",
+
+story:
+"The Great Pyramid of Giza is one of the Seven Wonders of the Ancient World.",
+
+question:
+"Who built the Great Pyramid?",
+
+answers:[
+"Khufu",
+"Menes",
+"Ramses",
+"Akhenaten"
+],
+
+correct:0
+},
+
+{
+image:"images/statue.jpg",
+
+story:
+"Ancient Egyptian statues were created to honor kings and gods.",
+
+question:
+"Why were these statues built?",
+
+answers:[
+"To honor Pharaohs",
+"To play games",
+"To build houses",
+"To make food"
+],
+
+correct:0
+},
+
+{
+image:"images/museum-front.jpg",
+
+story:
+"The Antiquities Museum preserves priceless pieces of history.",
+
+question:
+"What is the purpose of a museum?",
+
+answers:[
+"Preserve history",
+"Sell food",
+"Build roads",
+"Make phones"
+],
+
+correct:0
 }
 
-body{
-    min-height:100vh;
+];
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+let currentQuestion = 0;
+let score = 0;
+let keys = 0;
 
-    background:url("images/museum.jpg");
-    background-size:cover;
-    background-position:center;
+const image =
+document.getElementById("artifactImage");
+
+const story =
+document.getElementById("artifactStory");
+
+const question =
+document.getElementById("question");
+
+const questionNumber =
+document.getElementById("questionNumber");
+
+const scoreText =
+document.getElementById("score");
+
+const keysText =
+document.getElementById("keys");
+
+const buttons =
+document.querySelectorAll(".answer");
+
+function loadQuestion(){
+
+    const q = questions[currentQuestion];
+
+    image.src = q.image;
+
+    story.innerHTML = q.story;
+
+    question.innerHTML = q.question;
+
+    questionNumber.innerHTML =
+    "Question " +
+    (currentQuestion + 1) +
+    " / " +
+    questions.length;
+
+    buttons.forEach((button,index)=>{
+
+        button.innerHTML =
+        q.answers[index];
+
+    });
+
+    scoreText.innerHTML =
+    "Score : " + score;
+
+    keysText.innerHTML =
+    "🔑 " + keys + " / 5";
 }
 
-.quizBox{
+loadQuestion();
 
-    width:900px;
-    max-width:95%;
+buttons.forEach((button,index)=>{
 
-    background:rgba(0,0,0,.85);
+    button.onclick = function(){
 
-    border:3px solid gold;
+        if(index === questions[currentQuestion].correct){
 
-    border-radius:25px;
+            score += 10;
 
-    padding:30px;
+            keys++;
 
-    text-align:center;
+            alert("✅ Correct! You found a Time Key.");
 
-    color:white;
-}
+        }else{
 
-#questionNumber{
+            alert("❌ Wrong Answer.");
+        }
 
-    color:gold;
+        currentQuestion++;
 
-    margin-bottom:20px;
-}
+        if(currentQuestion >= questions.length){
 
-#artifactImage{
+            localStorage.setItem(
+                "finalScore",
+                score
+            );
 
-    width:350px;
-    height:250px;
+            window.location.href =
+            "win.html";
 
-    object-fit:cover;
+            return;
+        }
 
-    border-radius:15px;
-
-    margin-bottom:20px;
-
-    border:3px solid gold;
-}
-
-#artifactStory{
-
-    font-size:18px;
-
-    line-height:30px;
-
-    margin-bottom:20px;
-
-    color:#ddd;
-}
-
-#question{
-
-    color:gold;
-
-    margin-bottom:20px;
-}
-
-.answers{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-}
-
-.answer{
-
-    padding:15px;
-
-    background:#D4AF37;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-size:16px;
-}
-
-.answer:hover{
-
-    background:white;
-}
-
-#keys{
-
-    margin-top:25px;
-
-    font-size:24px;
-
-    color:gold;
-}
-
-#score{
-
-    margin-top:15px;
-
-    font-size:24px;
-
-    color:gold;
-}
+        loadQuestion();
+    };
+});
