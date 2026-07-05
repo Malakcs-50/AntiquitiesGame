@@ -1,39 +1,44 @@
-let selectedCharacter = "";
+<!DOCTYPE html>
+<html lang="en">
 
-const boy = document.getElementById("boy");
-const girl = document.getElementById("girl");
-const startBtn = document.getElementById("startBtn");
-const playerName = document.getElementById("playerName");
+<head>
 
-boy.addEventListener("click", () => {
-    selectedCharacter = "boy";
-    boy.classList.add("selected");
-    girl.classList.remove("selected");
-});
+<meta charset="UTF-8">
 
-girl.addEventListener("click", () => {
-    selectedCharacter = "girl";
-    girl.classList.add("selected");
-    boy.classList.remove("selected");
-});
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-startBtn.addEventListener("click", () => {
+<title>Echoes Of Time</title>
 
-    const name = playerName.value.trim();
+<link rel="stylesheet" href="story.css">
 
-    if (name === "") {
-        alert("Please enter your name.");
-        return;
-    }
+</head>
 
-    if (selectedCharacter === "") {
-        alert("Please choose your character.");
-        return;
-    }
+<body>
 
-    localStorage.setItem("playerName", name);
-    localStorage.setItem("character", selectedCharacter);
+<div class="background">
 
-    window.location.href = "story.html";
+<div class="overlay">
 
-});
+<div id="storyBox">
+
+<h1 id="title">
+Echoes Of Time
+</h1>
+
+<p id="storyText"></p>
+
+<button id="nextBtn">
+Continue
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="story.js"></script>
+
+</body>
+
+</html>
