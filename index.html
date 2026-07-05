@@ -1,95 +1,77 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+const playerName =
+localStorage.getItem("playerName");
 
-body{
-    overflow:hidden;
-}
+const text =
+document.getElementById("storyText");
 
-.background{
+const button =
+document.getElementById("nextBtn");
 
-    width:100%;
-    height:100vh;
+const scenes = [
 
-    background:url("images/museum.jpg");
+`Welcome ${playerName}...`,
 
-    background-size:cover;
-    background-position:center;
+"You have discovered a mysterious museum.",
 
-}
+"A hidden Time Portal has awakened.",
 
-.overlay{
+"The timeline has been broken.",
 
-    width:100%;
-    height:100%;
+"Collect the Five Keys of Time.",
 
-    background:rgba(0,0,0,.75);
+"Restore history and return home."
 
-    display:flex;
+];
 
-    justify-content:center;
+let sceneIndex = 0;
+let charIndex = 0;
 
-    align-items:center;
+function typeScene(){
 
-}
+    if(charIndex < scenes[sceneIndex].length){
 
-#storyBox{
+        text.innerHTML +=
+        scenes[sceneIndex].charAt(charIndex);
 
-    width:700px;
+        charIndex++;
 
-    text-align:center;
+        setTimeout(typeScene,40);
 
-    color:white;
+    }
 
-}
+    else{
 
-#title{
+        setTimeout(nextScene,1500);
 
-    font-size:55px;
-
-    color:#D4AF37;
-
-    margin-bottom:40px;
+    }
 
 }
 
-#storyText{
+function nextScene(){
 
-    font-size:28px;
+    sceneIndex++;
 
-    line-height:55px;
+    charIndex = 0;
 
-    min-height:220px;
+    if(sceneIndex >= scenes.length){
 
-}
+        button.style.display =
+        "inline-block";
 
-#nextBtn{
+        return;
+    }
 
-    margin-top:40px;
+    text.innerHTML = "";
 
-    padding:18px 50px;
-
-    font-size:22px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#D4AF37;
-
-    color:white;
-
-    cursor:pointer;
-
-    display:none;
+    typeScene();
 
 }
 
-#nextBtn:hover{
+typeScene();
 
-    background:#b89120;
+button.onclick = function(){
 
-}
+    window.location.href =
+    "portal.html";
+
+};
