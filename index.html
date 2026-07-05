@@ -1,48 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+body{
+    min-height:100vh;
 
-<title>Echoes Of Time - Quiz</title>
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-<link rel="stylesheet" href="quiz.css">
+    background:url("images/museum.jpg");
+    background-size:cover;
+    background-position:center;
+}
 
-</head>
+.quizBox{
 
-<body>
+    width:900px;
+    max-width:95%;
 
-<div class="quizBox">
+    background:rgba(0,0,0,.85);
 
-    <h2 id="questionNumber"></h2>
+    border:3px solid gold;
 
-    <img id="artifactImage">
+    border-radius:25px;
 
-    <p id="artifactStory"></p>
+    padding:30px;
 
-    <h1 id="question"></h1>
+    text-align:center;
 
-    <div class="answers">
+    color:white;
+}
 
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
-        <button class="answer"></button>
+#questionNumber{
 
-    </div>
+    color:gold;
 
-    <div id="keys">
-        🔑 0 / 5
-    </div>
+    margin-bottom:20px;
+}
 
-    <div id="score">
-        Score : 0
-    </div>
+#artifactImage{
 
-</div>
+    width:350px;
+    height:250px;
 
-<script src="quiz.js"></script>
+    object-fit:cover;
 
-</body>
-</html>
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+    border:3px solid gold;
+}
+
+#artifactStory{
+
+    font-size:18px;
+
+    line-height:30px;
+
+    margin-bottom:20px;
+
+    color:#ddd;
+}
+
+#question{
+
+    color:gold;
+
+    margin-bottom:20px;
+}
+
+.answers{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:15px;
+}
+
+.answer{
+
+    padding:15px;
+
+    background:#D4AF37;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+}
+
+.answer:hover{
+
+    background:white;
+}
+
+#keys{
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    color:gold;
+}
+
+#score{
+
+    margin-top:15px;
+
+    font-size:24px;
+
+    color:gold;
+}
