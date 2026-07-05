@@ -1,77 +1,40 @@
-const playerName =
-localStorage.getItem("playerName");
+<!DOCTYPE html>
+<html lang="en">
 
-const text =
-document.getElementById("storyText");
+<head>
 
-const button =
-document.getElementById("nextBtn");
+<meta charset="UTF-8">
 
-const scenes = [
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-`Welcome ${playerName}...`,
+<title>Time Portal</title>
 
-"You have discovered a mysterious museum.",
+<link rel="stylesheet" href="portal.css">
 
-"A hidden Time Portal has awakened.",
+</head>
 
-"The timeline has been broken.",
+<body>
 
-"Collect the Five Keys of Time.",
+<div class="portalContainer">
 
-"Restore history and return home."
+<div class="portal"></div>
 
-];
+<h1>TIME PORTAL ACTIVATED</h1>
 
-let sceneIndex = 0;
-let charIndex = 0;
+<p>
+History is collapsing...
+<br>
+Restore the timeline before it's too late.
+</p>
 
-function typeScene(){
+<button id="startMission">
+START MISSION
+</button>
 
-    if(charIndex < scenes[sceneIndex].length){
+</div>
 
-        text.innerHTML +=
-        scenes[sceneIndex].charAt(charIndex);
+<script src="portal.js"></script>
 
-        charIndex++;
+</body>
 
-        setTimeout(typeScene,40);
-
-    }
-
-    else{
-
-        setTimeout(nextScene,1500);
-
-    }
-
-}
-
-function nextScene(){
-
-    sceneIndex++;
-
-    charIndex = 0;
-
-    if(sceneIndex >= scenes.length){
-
-        button.style.display =
-        "inline-block";
-
-        return;
-    }
-
-    text.innerHTML = "";
-
-    typeScene();
-
-}
-
-typeScene();
-
-button.onclick = function(){
-
-    window.location.href =
-    "portal.html";
-
-};
+</html>
