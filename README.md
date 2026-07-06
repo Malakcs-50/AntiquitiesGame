@@ -1,122 +1,93 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+background:url("images/museum.jpg");
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 
-    background:url("images/museum.jpg");
-    background-size:cover;
-    background-position:center;
 }
 
 .quizBox{
 
-    width:900px;
-    max-width:95%;
+width:900px;
+padding:30px;
+background:rgba(0,0,0,.85);
+border:3px solid gold;
+border-radius:20px;
+text-align:center;
+color:white;
 
-    background:rgba(0,0,0,.85);
-
-    border:3px solid gold;
-
-    border-radius:25px;
-
-    padding:30px;
-
-    text-align:center;
-
-    color:white;
 }
 
-#questionNumber{
+#levelTitle{
 
-    color:gold;
+color:gold;
+margin-bottom:20px;
 
-    margin-bottom:20px;
 }
 
 #artifactImage{
 
-    width:350px;
-    height:250px;
+width:350px;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+border:3px solid gold;
 
-    object-fit:cover;
-
-    border-radius:15px;
-
-    margin-bottom:20px;
-
-    border:3px solid gold;
 }
 
 #artifactStory{
 
-    font-size:18px;
+margin:20px 0;
+font-size:20px;
 
-    line-height:30px;
-
-    margin-bottom:20px;
-
-    color:#ddd;
 }
 
 #question{
 
-    color:gold;
+margin-bottom:25px;
+color:gold;
 
-    margin-bottom:20px;
 }
 
 .answers{
 
-    display:grid;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
 }
 
 .answer{
 
-    padding:15px;
+padding:15px;
+background:gold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
 
-    background:#D4AF37;
-
-    border:none;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-size:16px;
 }
 
 .answer:hover{
 
-    background:white;
-}
+background:white;
 
-#keys{
-
-    margin-top:25px;
-
-    font-size:24px;
-
-    color:gold;
 }
 
 #score{
 
-    margin-top:15px;
+margin-top:25px;
+font-size:24px;
+color:gold;
 
-    font-size:24px;
-
-    color:gold;
 }
