@@ -1,35 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+let level = localStorage.getItem("level");
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Museum Map</title>
+if(level==null){
 
-<link rel="stylesheet" href="map.css">
+level=1;
 
-</head>
+localStorage.setItem("level",1);
 
-<body>
+}
 
-<div class="museum">
+for(let i=2;i<=5;i++){
 
-    <img src="images/museum-map.png" class="museumImage">
+if(level>=i){
 
-    <div id="s1" class="era unlocked" onclick="openQuiz(1)"></div>
+document.getElementById("s"+i).classList.remove("locked");
 
-    <div id="s2" class="era locked"></div>
+document.getElementById("s"+i).classList.add("unlocked");
 
-    <div id="s3" class="era locked"></div>
+document.getElementById("s"+i).onclick=function(){
 
-    <div id="s4" class="era locked"></div>
+openQuiz(i);
 
-    <div id="s5" class="era locked"></div>
+}
 
-</div>
+}
 
-<script src="map.js"></script>
+}
 
-</body>
- 
-</html>
+function openQuiz(level){
+
+    localStorage.setItem("currentLevel", level);
+
+    window.location.href = "quiz.html";
+
+}
+
