@@ -1,7 +1,5 @@
-document
-.getElementById("startMission")
-.onclick=function(){
+document.getElementById("startMission").onclick=function(){
 
-window.location.href="quiz.html";
+    window.location.href="map.html";
 
-}
+};
