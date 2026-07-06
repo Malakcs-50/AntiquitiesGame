@@ -2,42 +2,28 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes Of Time - Story</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Echoes Of Time</title>
-
-<link rel="stylesheet" href="story.css">
-
+    <link rel="stylesheet" href="story.css">
 </head>
 
 <body>
 
-<div class="background">
+    <div class="storyBox">
 
-<div class="overlay">
+        <h1>📜 The Beginning</h1>
 
-<div id="storyBox">
+        <p id="storyText"></p>
 
-<h1 id="title">
-Echoes Of Time
-</h1>
+        <button id="nextBtn" style="display:none;">
+            Enter the Portal
+        </button>
 
-<p id="storyText"></p>
+    </div>
 
-<button id="nextBtn">
-Continue
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="story.js"></script>
+    <script src="story.js"></script>
 
 </body>
 
