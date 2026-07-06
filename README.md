@@ -1,45 +1,129 @@
-const player = localStorage.getItem("playerName");
+<!DOCTYPE html>
+<html lang="en">
 
-const text = document.getElementById("storyText");
-const button = document.getElementById("nextBtn");
+<head>
 
-const story =
-`Welcome ${player}...
+<meta charset="UTF-8">
 
-You have discovered a mysterious museum.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-A hidden Time Portal has awakened.
+<title>Victory</title>
 
-The timeline has been broken.
+<style>
 
-Collect the Five Time Keys.
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-Restore history before it disappears forever.`;
+body{
 
-let i = 0;
+    background:black;
 
-function typing(){
+    height:100vh;
 
-    if(i < story.length){
+    display:flex;
 
-        text.innerHTML += story.charAt(i);
+    justify-content:center;
 
-        i++;
+    align-items:center;
 
-        setTimeout(typing,40);
+    flex-direction:column;
 
-    }else{
+    color:white;
 
-        button.style.display="inline-block";
-
-    }
+    text-align:center;
 
 }
 
-typing();
+img{
 
-button.onclick=function(){
+    width:250px;
 
-    window.location.href="portal.html";
+    margin-bottom:20px;
 
-};
+}
+
+h1{
+
+    color:gold;
+
+    margin-bottom:15px;
+
+}
+
+h2{
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+button{
+
+    padding:15px 35px;
+
+    background:gold;
+
+    color:black;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="images/portal.png" alt="Portal">
+
+<h1>🏺 Guardian Of History 🏺</h1>
+
+<h2 id="player"></h2>
+
+<p>
+You collected all Time Keys and restored history.
+</p>
+
+<p id="finalScore"></p>
+
+<button onclick="location.href='index.html'">
+Play Again
+</button>
+
+<script>
+
+document.getElementById("player").textContent =
+localStorage.getItem("playerName");
+
+document.getElementById("finalScore").textContent =
+"Final Score : " + localStorage.getItem("finalScore");
+
+</script>
+
+</body>
+
+</html>
