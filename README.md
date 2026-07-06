@@ -1,67 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Echoes of Time</title>
+    <title>Echoes Of Time</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<section id="welcome">
+    <section id="welcome">
 
-    <div class="overlay"></div>
+        <div class="overlay"></div>
 
-    <div class="card">
+        <div class="card">
 
-        <img src="images/logo.gif" class="logo">
+            <img src="images/logo.gif" class="logo" alt="Logo">
 
-        <h1>Echoes of Time</h1>
+            <h1>Echoes Of Time</h1>
 
-        <p>
-            Welcome to the Antiquities Museum.
-            <br>
-            Your mission is to restore history.
-        </p>
+            <p>
+                Welcome to the Antiquities Museum.
+                <br>
+                Start your journey through time.
+            </p>
 
-        <input
-            type="text"
-            id="playerName"
-            placeholder="Enter Your Name"
-        >
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Enter Your Name">
 
-        <h2>Choose Character</h2>
+            <h2>Choose Character</h2>
 
-        <div class="characters">
+            <div class="characters">
 
-            <img
-                src="images/boy.jpeg"
-                id="boy"
-                class="character"
-            >
+                <img src="images/boy.jpeg"
+                     id="boy"
+                     class="character"
+                     alt="Boy">
 
-            <img
-                src="images/girl.png"
-                id="girl"
-                class="character"
-            >
+                <img src="images/girl.png"
+                     id="girl"
+                     class="character"
+                     alt="Girl">
+
+            </div>
+
+            <button id="startBtn">
+                START ADVENTURE
+            </button>
 
         </div>
 
-        <button id="startBtn">
-            START ADVENTURE
-        </button>
+    </section>
 
-    </div>
-
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
