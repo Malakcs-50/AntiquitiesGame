@@ -2,94 +2,54 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    overflow:hidden;
-}
-
-.background{
-
-    width:100%;
     height:100vh;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
     background:url("images/museum.jpg");
-
     background-size:cover;
     background-position:center;
-
 }
 
-.overlay{
-
-    width:100%;
-    height:100%;
-
-    background:rgba(0,0,0,.75);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-#storyBox{
-
+.storyBox{
     width:700px;
-
+    max-width:90%;
+    background:rgba(0,0,0,.75);
+    padding:40px;
+    border-radius:20px;
     text-align:center;
-
     color:white;
-
+    border:2px solid gold;
 }
 
-#title{
-
-    font-size:55px;
-
-    color:#D4AF37;
-
-    margin-bottom:40px;
-
+h1{
+    color:gold;
+    margin-bottom:25px;
 }
 
 #storyText{
-
-    font-size:28px;
-
-    line-height:55px;
-
-    min-height:220px;
-
-}
-
-#nextBtn{
-
-    margin-top:40px;
-
-    padding:18px 50px;
-
     font-size:22px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#D4AF37;
-
-    color:white;
-
-    cursor:pointer;
-
-    display:none;
-
+    line-height:38px;
+    min-height:220px;
+    white-space:pre-line;
 }
 
-#nextBtn:hover{
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    font-size:18px;
+    background:gold;
+    color:black;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
 
-    background:#b89120;
-
+button:hover{
+    transform:scale(1.05);
 }
