@@ -5,19 +5,25 @@ const girl = document.getElementById("girl");
 const startBtn = document.getElementById("startBtn");
 const playerName = document.getElementById("playerName");
 
-boy.addEventListener("click", () => {
+boy.addEventListener("click", function () {
+
     selectedCharacter = "boy";
+
     boy.classList.add("selected");
     girl.classList.remove("selected");
+
 });
 
-girl.addEventListener("click", () => {
+girl.addEventListener("click", function () {
+
     selectedCharacter = "girl";
+
     girl.classList.add("selected");
     boy.classList.remove("selected");
+
 });
 
-startBtn.addEventListener("click", () => {
+startBtn.addEventListener("click", function () {
 
     const name = playerName.value.trim();
 
@@ -27,7 +33,7 @@ startBtn.addEventListener("click", () => {
     }
 
     if (selectedCharacter === "") {
-        alert("Please choose your character.");
+        alert("Please choose a character.");
         return;
     }
 
