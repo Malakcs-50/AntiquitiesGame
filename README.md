@@ -1,122 +1,92 @@
 *{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
 
-background:#020202;
+    height:100vh;
 
-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-overflow:hidden;
+    background:black;
 
 }
 
 .portalContainer{
 
-text-align:center;
+    text-align:center;
 
-color:white;
+    color:white;
 
 }
 
-.portal{
+.portalImage{
 
-width:250px;
+    width:280px;
 
-height:250px;
-
-margin:auto;
-
-border-radius:50%;
-
-border:12px solid #00d9ff;
-
-border-top:12px solid #ffffff;
-
-animation:spin 2s linear infinite;
-
-box-shadow:
-
-0 0 30px cyan,
-
-0 0 80px cyan,
-
-0 0 150px cyan;
+    animation:spin 5s linear infinite;
 
 }
 
 @keyframes spin{
 
-0%{
+    from{
+        transform:rotate(0deg);
+    }
 
-transform:rotate(0deg);
-
-}
-
-100%{
-
-transform:rotate(360deg);
-
-}
+    to{
+        transform:rotate(360deg);
+    }
 
 }
 
 h1{
 
-margin-top:40px;
+    color:gold;
 
-font-size:42px;
+    margin-top:25px;
 
-color:#FFD700;
+    font-size:42px;
 
 }
 
 p{
 
-margin-top:25px;
+    margin-top:20px;
 
-font-size:22px;
+    font-size:22px;
 
-line-height:38px;
+    line-height:35px;
 
 }
 
 button{
 
-margin-top:40px;
+    margin-top:35px;
 
-padding:18px 45px;
+    padding:15px 35px;
 
-font-size:22px;
+    border:none;
 
-border:none;
+    border-radius:10px;
 
-border-radius:10px;
+    background:gold;
 
-cursor:pointer;
+    font-size:20px;
 
-background:#FFD700;
+    cursor:pointer;
 
-transition:.4s;
+    transition:.3s;
 
 }
 
 button:hover{
 
-transform:scale(1.1);
-
-background:white;
+    transform:scale(1.05);
 
 }
